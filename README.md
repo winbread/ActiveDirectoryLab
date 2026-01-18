@@ -19,8 +19,17 @@ This project consists of building a Domain Controller (AD DS + DNS.) Joining a W
 - <b>Windows 10</b>
 - <b>Oracle VirtualBox</b>
 
+<h2>Network Plan </h2>
 
-<h2>Program walk-through:</h2>
+- <b>VirtualBox: 2 NICs on the server</b>
+     - <b>NIC 1 (Internal Network): AD lab traffic (domain + client communication)</b>
+     - <b>NIC 2 (NAT): Internet access (updates)</b>>
+- <b>DC has RRAS/NAT configured</b>
+  - <b>Client gateway: 192.168.0.10</b>
+  - <b>DNS: 192.168.0.10</b>
+
+
+<h2>Lab walk-through:</h2>
 
 <p align="center">
 Launch the utility: <br/>
