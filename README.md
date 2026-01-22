@@ -75,8 +75,18 @@ Installation complete:  <br/>
 <img src="images/SS8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Observe the wiped disk:  <br/>
-<img src="images/SS9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+We are going to want to enable Routing and Remote access. We will go into tools -> Routing and Remoting access -> Right Click on our DC and configure the settings in the wizard <br/>
+Make sure we select the Internet adapter. <br/>
+<img src="images/SS9.png"/>
+
+When your DC appears with the "green arrow" it has been configured succesfully  <br/>
+<img src="images/SS10.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+nstallation complete:  <br/>
+<img src="images/SS8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
 nstallation complete:  <br/>
 <img src="images/SS8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
