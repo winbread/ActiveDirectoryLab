@@ -33,6 +33,11 @@ This project consists of building a Domain Controller (AD DS + DNS.) Joining a W
 - <b>DC has RRAS/NAT configured</b>
   - <b>Client gateway: 192.168.0.10</b>
   - <b>DNS: 192.168.0.10</b>
+ - <b>DHCP configured (1 Scope)</b>
+   - <b>Range: 192.168.0.100-200</b>
+   - <b>Mask: 255.255.255.0</b>
+   - <b>DNS: 192.168.0.10</b>
+   - <b>Gateway: 192.168.0.10</b>
 
 
 <h2>Lab walk-through:</h2>
@@ -55,7 +60,7 @@ Go through the "Add Roles and Features Wizard" on Server Manager to install AD D
 <img src="images/SS3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Promote the server to a doamin controller and add a new forest. For this lab we'll just use "mydomain.com"  <br/>
+Promote the server to a domain controller and add a new forest. For this lab we'll just use "mydomain.com"  <br/>
 <img src="images/SS4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
@@ -78,23 +83,52 @@ Installation complete:  <br/>
 We are going to want to enable Routing and Remote access. We will go into tools -> Routing and Remoting access -> Right Click on our DC and configure the settings in the wizard <br/>
 Make sure we select the Internet adapter. <br/>
 <img src="images/SS9.png"/>
-
+<br />
+<br />
 When your DC appears with the "green arrow" it has been configured succesfully  <br/>
 <img src="images/SS10.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-nstallation complete:  <br/>
-<img src="images/SS8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Next we want the client to receive an IP that will let them access and browse the internet.  <br/> Through the Roles and Features Wizard we installed a DHCP server. <br/>
+<img src="images/SS11.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-nstallation complete:  <br/>
-<img src="images/SS8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Configure our IP address range according to network plan.  <br/>
+<img src="images/SS12.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-nstallation complete:  <br/>
-<img src="images/SS8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+The Default Gateway will be the DC's IP.  <br/>
+<img src="images/SS13.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
+Lets make sure we activate the scope  <br/>
+<img src="images/SS14.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+We will run our Powershell script to make 1000 users.  <br/>
+<img src="images/SS15.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Users made  <br/>
+<img src="images/SS16.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+</p>
+We will now join the client to the domain but lets check if our network plan worked by running ipconfig, we should be getting our internet connection through the DC  <br/>
+<img src="images/SS17.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+</p>
+Join the client to the domain  <br/>
+<img src="images/SS18.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+</p>
+Restart client device and in command prompt to run whoami to confirm client has joined domain.  <br/>
+<img src="images/SS19.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+
 </p>
 
 <!--
